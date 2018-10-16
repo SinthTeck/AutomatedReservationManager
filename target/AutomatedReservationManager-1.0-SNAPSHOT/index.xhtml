@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>A.R.M.</title>
+            </f:facet>
+        </h:head>
+
+        <h:body style="min-width: 800px;">
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit style="text-align: center;" position="north" resizable="false" closable="false" collapsible="false">
+                    <h1>Automated Reservation Manager</h1>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <div class="ui-g">
+                        <div class="ui-g-1"></div>
+                        <div class="ui-g-5" style="text-align: right; padding: 0;">
+                            <p:button outcome="reserve" value="RESERVE TABLE" style="width: 300px; height: 200px; font-size: 20pt;">
+                            </p:button>
+                        </div>
+
+                        <div class="ui-g-5" style="text-align: left;padding: 0;">
+                            <p:button outcome="sit" value="GET TABLE NOW" style="width: 300px; height: 200px; font-size: 20pt;">
+                            </p:button>
+                        </div>
+
+                        <div class="ui-g-1"></div>
+                    </div>
+                    <div class="ui-g">
+                        <div class="ui-g-1"></div>
+                        
+                        <div class="ui-g-10" style="text-align: center;">
+                            <p:button outcome="leave" value="LEAVE" style="width: 600px; height: 150px; font-size: 20pt;">
+                            </p:button>
+                        </div>
+                        
+                        <div class="ui-g-1"></div>
+                    </div>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+

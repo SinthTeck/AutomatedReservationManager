@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>A.R.M.</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit style="text-align: center;" position="north" resizable="false" closable="false" collapsible="false">
+                <h1>Automated Reservation Manager</h1>
+            </p:layoutUnit>
+
+
+            <p:layoutUnit position="center" style="text-align: center;">
+                <div class="ui-g">
+                    <div class="ui-g-2"></div>
+                    <div class="ui-g-8">
+                        <h:form id="reservation_form" style="font-size: 16pt;">
+                            <p:outputLabel style="font-size: 20pt; color: darkgrey" value="Fill the following form with your reservation information" />
+                            <p:panel style="padding: 0; margin: 10px; text-align: left;">
+                                <h:panelGrid columns="2" cellpadding="10" style="margin: 0 auto;">
+                                    <p:outputLabel for="seats" value="Seats: " />
+                                    <p:inputNumber id="seats" value="#{reservationView.seats}" minValue="0" maxValue="40" decimalPlaces="0">
+                                        <f:validateLongRange minimum="1" maximum="40"/>
+                                    </p:inputNumber> 
+
+                                    <p:outputLabel for="date" value="Date: " />
+                                    <p:calendar id="date" value="#{reservationView.date}" showOn="button" /> 
+
+                                    <p:outputLabel for="time" value="Time: "/>
+                                    <p:calendar id="time" value="#{reservationView.time}" pattern="HH:mm" minHour="9" maxHour="23" timeOnly="true" stepHour="1" stepMinute="1"></p:calendar>
+
+                                    <f:facet name="footer">
+                                        <div style="text-align: center;">
+                                            <p:commandButton  update="reservation_form" value="BOOK TABLE" action="#{reservationView.makeReservation()}">
+                                            </p:commandButton>    
+                                        </div>
+                                    </f:facet> 
+                                </h:panelGrid>
+                            </p:panel>
+
+                            <div id="information_container" style="margin: 0 auto; text-align: center;">
+                                <p:outputLabel  id="information_message" rendered="#{reservationView.renderMessage}" style="color: red;" value="#{reservationView.message}" />
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="ui-g-2"></div>
+                </div>
+
+
+                <br></br>
+                <hr style="margin: 20px 50px;"></hr>
+
+                <h:form>
+                    <h:panelGrid columns="4" cellpadding="7" style="margin:0 auto;">
+                        <p:outputLabel value="Already have a ticket? " for="reservation_ticket_input"/>
+                        <p:inputText id="reservation_ticket_input" maxlength="5" value="#{reservationView.ticket}"/>
+                        <p:watermark for="reservation_ticket_input" value="Insert your ticket here" id="ticket_watermark"/>
+                        <p:commandButton value="GET YOUR TABLE" action="#{reservationView.useReservation()}"/>
+                    </h:panelGrid>
+                </h:form>
+
+
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

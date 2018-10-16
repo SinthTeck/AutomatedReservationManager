@@ -1,0 +1,13 @@
+it\unipi\studenti\automatedreservationmanager\managedbeans\LeaveView.class
+it\unipi\studenti\automatedreservationmanager\utils\SocketObserver.class
+it\unipi\studenti\automatedreservationmanager\model\TableUnit.class
+it\unipi\studenti\automatedreservationmanager\utils\TicketGenerator.class
+it\unipi\studenti\automatedreservationmanager\managedbeans\ReservationView.class
+it\unipi\studenti\automatedreservationmanager\managedbeans\SitView.class
+it\unipi\studenti\automatedreservationmanager\singletonbeans\DBManagerBean.class
+it\unipi\studenti\automatedreservationmanager\singletonbeans\TablesManager.class
+it\unipi\studenti\automatedreservationmanager\model\RealTimeRequest.class
+it\unipi\studenti\automatedreservationmanager\singletonbeans\UserIdGenerator.class
+it\unipi\studenti\automatedreservationmanager\model\Reservation.class
+it\unipi\studenti\automatedreservationmanager\utils\Properties.class
+it\unipi\studenti\automatedreservationmanager\singletonbeans\TablesManager$1.class

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>A.R.M.</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit style="text-align: center;" position="north" resizable="false" closable="false" collapsible="false">
+                <h1>Automated Reservation Manager</h1>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="text-align: center;">
+                <div class="ui-g">
+                    <div class="ui-g-2"></div>
+                    <div class="ui-g-8">
+                        <h:form style="font-size: 16pt;">
+                            <p:outputLabel style="font-size: 20pt; color: darkgrey" value="Insert your ticket to leave the table" />
+
+                            <p:panel>
+                                <h:panelGrid columns="2" cellpadding="10" style="margin: 0 auto;">
+                                    <p:outputLabel for="ticket" value="Ticket: " />
+                                    <p:inputText id="ticket" maxlength="5" value="#{leaveView.ticket}" />
+
+                                    <f:facet name="footer">
+                                        <p:commandButton id="leave_button" value="LEAVE" action="#{leaveView.leaveTable()}" />
+                                    </f:facet>  
+
+                                </h:panelGrid>
+                            </p:panel>
+
+                        </h:form>
+
+                    </div>
+                    <div class="ui-g-2"></div>
+                </div>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit style="text-align: center;" position="north" resizable="false" closable="false" collapsible="false">
+                <h1>Automated Reservation Manager</h1>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="text-align: center;">
+
+                <div class="ui-g">
+                    <div class="ui-g-2"></div>
+                    <div class="ui-g-8">
+
+                        <div id="result_div" style="margin: 0 auto; font-size: 16pt;">
+                            <p:outputLabel value="Your table is ready" style="font-size: 20pt; color: darkgray"/>
+
+                            <p:panel>
+                                <h:panelGrid id="result_panel" style=" text-align: center; margin: 0 auto;">
+                                    <h:panelGrid columns="4" cellpadding="5" style="text-align: left;">
+                                        <p:outputLabel value="Ticket: "/>
+                                        <p:outputLabel style="font-size: 18pt; color: green;" id="ticket" value="#{reservationView.ticket}"/>
+                                        <p:commandButton id="btnCopy" style="font-size: 8pt;" value="Copy" icon="fa fa-copy" />  
+                                        <pe:clipboard trigger="btnCopy" action="copy" target="ticket"></pe:clipboard>
+
+                                        <p:outputLabel value="Table number: "/>
+                                        <p:outputLabel style="font-size: 18pt;" id="table_number" value="#{reservationView.tableId}"/>
+
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                                
+                                <h:form id="leave_form">
+                                    <p:commandButton id="leave_table_button" value="Leave the table" action="#{reservationView.redirectToLeave()}"></p:commandButton>
+                                </h:form>
+                            </p:panel>
+
+                        </div>
+
+                    </div>
+                    <div class="ui-g-2"></div>
+                </div>
+
+            </p:layoutUnit>
+
+
+
+        </p:layout>
+    </h:body>
+</html>
+
